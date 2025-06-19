@@ -72,19 +72,14 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            text-decoration: none;
         }
 
-        .logo-icon {
+        /* NUEVO LOGO SVG */
+        .logo-svg {
             width: 50px;
             height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            font-weight: 700;
+            flex-shrink: 0;
         }
 
         .logo-text {
@@ -173,6 +168,13 @@
             margin: 3px 0;
             transition: all 0.3s ease;
             border-radius: 3px;
+        }
+
+        /* LOGO FOOTER ACTUALIZADO */
+        .footer-logo-svg {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
         }
 
         .hero {
@@ -788,19 +790,6 @@
             gap: 1rem;
         }
 
-        .footer-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-primary);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
         .footer-logo-text {
             font-size: 1.25rem;
             font-weight: 700;
@@ -898,6 +887,10 @@
             .additional-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .logo-text {
+                display: none;
+            }
         }
 
         @media (max-width: 480px) {
@@ -957,7 +950,40 @@
     <header class="header" id="header" role="banner">
         <nav class="nav-container" role="navigation" aria-label="Menú principal">
             <a href="#inicio" class="logo-container" aria-label="LokusData Inicio">
-                <div class="logo-icon">LD</div>
+                <!-- LOGO SVG INTEGRADO -->
+                <svg class="logo-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="headerBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="headerDataGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4fd1c7;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#38b2ac;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Círculo de fondo -->
+                    <circle cx="40" cy="40" r="36" fill="url(#headerBgGradient)"/>
+                    
+                    <!-- Símbolo de ubicación estilizado -->
+                    <path d="M40 15 C32 15 26 21 26 29 C26 35 32 45 40 55 C48 45 54 35 54 29 C54 21 48 15 40 15 Z" 
+                          fill="white" opacity="0.9"/>
+                    
+                    <!-- Punto central de ubicación -->
+                    <circle cx="40" cy="28" r="4" fill="url(#headerDataGradient)"/>
+                    
+                    <!-- Elementos de datos (puntos conectados) -->
+                    <circle cx="25" cy="50" r="2" fill="url(#headerDataGradient)"/>
+                    <circle cx="35" cy="60" r="2" fill="url(#headerDataGradient)"/>
+                    <circle cx="45" cy="60" r="2" fill="url(#headerDataGradient)"/>
+                    <circle cx="55" cy="50" r="2" fill="url(#headerDataGradient)"/>
+                    
+                    <!-- Líneas de conexión (representando flujo de datos) -->
+                    <path d="M27 52 L33 58 M37 58 L43 58 M47 58 L53 52" 
+                          stroke="url(#headerDataGradient)" stroke-width="1.5" fill="none" opacity="0.8"/>
+                </svg>
+                
                 <div class="logo-text">
                     <div class="logo-main">LokusData</div>
                     <div class="logo-sub">Inteligencia de Datos</div>
@@ -1409,7 +1435,30 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="footer-logo-icon">LD</div>
+                    <!-- LOGO SVG EN FOOTER -->
+                    <svg class="footer-logo-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="footerBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="footerDataGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4fd1c7;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#38b2ac;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <circle cx="40" cy="40" r="36" fill="url(#footerBgGradient)"/>
+                        <path d="M40 15 C32 15 26 21 26 29 C26 35 32 45 40 55 C48 45 54 35 54 29 C54 21 48 15 40 15 Z" 
+                              fill="white" opacity="0.9"/>
+                        <circle cx="40" cy="28" r="4" fill="url(#footerDataGradient)"/>
+                        <circle cx="25" cy="50" r="2" fill="url(#footerDataGradient)"/>
+                        <circle cx="35" cy="60" r="2" fill="url(#footerDataGradient)"/>
+                        <circle cx="45" cy="60" r="2" fill="url(#footerDataGradient)"/>
+                        <circle cx="55" cy="50" r="2" fill="url(#footerDataGradient)"/>
+                        <path d="M27 52 L33 58 M37 58 L43 58 M47 58 L53 52" 
+                              stroke="url(#footerDataGradient)" stroke-width="1.5" fill="none" opacity="0.8"/>
+                    </svg>
                     <div class="footer-logo-text">LokusData</div>
                 </div>
 
