@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censos Económicos 2004-2024 | Lokus Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .hero-highlight {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-alt {
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .applications-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .applications-section .section-title {
+            color: white;
+        }
+        
+        .applications-section .section-title::after {
+            background: white;
+        }
+        
+        .application-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .application-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+        
+        .questions-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .questions-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .questions-list li::before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+            background: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact-section .section-title {
+            color: white;
+        }
+        
+        .contact-section .section-title::after {
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-card h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-card a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-card a:hover {
+            color: #5dade2;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .back-to-home {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            margin-top: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .back-to-home a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .stats-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">📍</div>
+                <span>LokusData</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/#problema">Problema</a></li>
+                <li><a href="/#solucion">Solución</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#tecnologia">Tecnología</a></li>
+                <li><a href="/#fundador">Fundador</a></li>
+                <li><a href="/censos-economicos" style="color: #667eea;">Censos Económicos</a></li>
+            </ul>
+            <a href="mailto:info@lokusdata.com" class="btn-primary">Comenzar</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>DE LOS DATOS A LAS DECISIONES</h1>
+            <p>Cómo la Base de Datos Longitudinal de Censos Económicos (2004-2024) se Convierte en su Máxima Ventaja Competitiva</p>
+            <div class="hero-highlight">
+                20 años de historia económica • 4.8 millones de establecimientos • Universo completo de la economía formal
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">DEJE DE ADIVINAR, EMPIECE A CUANTIFICAR</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #555;">
+                Toda decisión estratégica conlleva incertidumbre. Reduzca drásticamente ese riesgo con la evidencia más robusta disponible.
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Censos Económicos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2,469</div>
+                    <div class="stat-label">Municipios</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,051</div>
+                    <div class="stat-label">Clases SCIAN</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.8M</div>
+                    <div class="stat-label">Establecimientos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">EL ACTIVO MÁS COMPLETO DE MÉXICO</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">📊 Cobertura Temporal Completa</h3>
+                    <ul class="feature-list">
+                        <li>5 levantamientos censales (2004, 2009, 2014, 2019, 2024)</li>
+                        <li>Análisis longitudinal de 20 años</li>
+                        <li>Identificación de tendencias y saturaciones</li>
+                        <li>Evolución completa del mercado mexicano</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">🗺️ Precisión Geográfica</h3>
+                    <ul class="feature-list">
+                        <li>Nivel Nacional: Análisis sectorial completo</li>
+                        <li>Nivel Estatal: 32 entidades federativas</li>
+                        <li>Nivel Municipal: 2,469 municipios</li>
+                        <li>Identificación precisa de oportunidades</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">🏢 Detalle Sectorial SCIAN</h3>
+                    <ul class="feature-list">
+                        <li>Sector (2 dígitos): 20 sectores económicos</li>
+                        <li>Subsector (3 dígitos): 95 subsectores</li>
+                        <li>Rama (4 dígitos): 308 ramas de actividad</li>
+                        <li>Clase (6 dígitos): 1,051 clases específicas</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">📈 Variables Económicas</h3>
+                    <ul class="feature-list">
+                        <li>Personal Ocupado Total y Remunerado</li>
+                        <li>Producción Bruta Total</li>
+                        <li>Ingresos por Suministro de Bienes y Servicios</li>
+                        <li>Activos Fijos y Remuneraciones Totales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="applications-section">
+        <div class="container">
+            <h2 class="section-title">APLICACIONES ESTRATÉGICAS</h2>
+            
+            <div class="application-card">
+                <h3 class="application-title">🎯 ESTRATEGIA DE EXPANSIÓN Y LOCALIZACIÓN</h3>
+                <h4 style="color: #bdc3c7; margin-bottom: 1rem;">Preguntas que Resolvemos:</h4>
+                <ul class="questions-list">
+                    <li>¿En qué municipios tiene mi sector la mejor relación crecimiento vs. baja competencia?</li>
+                    <li>¿Qué estados muestran demanda creciente y poder adquisitivo en aumento?</li>
+                    <li>¿Cuál es el potencial de mercado para nuevos centros de producción?</li>
+                </ul>
+            </div>
+            
+            <div class="application-card">
+                <h3 class="application-title">🔍 INTELIGENCIA DE MERCADO Y ANÁLISIS COMPETITIVO</h3>
+                <h4 style="color: #bdc3c7; margin-bottom: 1rem;">Preguntas que Resolvemos:</h4>
+                <ul class="questions-list">
+                    <li>¿Cuál es mi participación de mercado estimada por estado?</li>
+                    <li>¿Dónde se concentra el crecimiento de mi competencia?</li>
+                    <li>¿Cómo compara mi productividad vs. el promedio sectorial?</li>
+                </ul>
+            </div>
+            
+            <div class="application-card">
+                <h3 class="application-title">📈 MARKETING Y DESARROLLO DE PRODUCTOS</h3>
+                <h4 style="color: #bdc3c7; margin-bottom: 1rem;">Preguntas que Resolvemos:</h4>
+                <ul class="questions-list">
+                    <li>¿Cuál es el Tamaño Total del Mercado (TAM) para nuevos productos?</li>
+                    <li>¿Dónde existen "desiertos comerciales" con oportunidades?</li>
+                    <li>¿Cómo ha evolucionado el poder adquisitivo por región?</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">LA VENTAJA DECISIVA: CENSO 2024</h2>
+            <div style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white; padding: 3rem; border-radius: 20px; text-align: center; margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">Integración Inmediata</h3>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    Los resultados del Censo Económico 2024 se publicarán en 2025. Las empresas con base histórica 2004-2019 
+                    serán las <strong>únicas capaces de integrar inmediatamente</strong> los nuevos datos, anticipando tendencias 
+                    post-pandemia con <strong>6-12 meses de ventaja</strong> sobre competidores.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">CONTACTE A LOKUS DATA</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem;">
+                Transforme sus decisiones estratégicas con el poder del universo censal económico
+            </p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📧 Contacto General</h3>
+                    <p><strong>Email:</strong> <a href="mailto:info@lokusdata.com">info@lokusdata.com</a></p>
+                    <p><strong>Website:</strong> <a href="https://lokusdata.com">lokusdata.com</a></p>
+                    <p>Para consultas sobre censos económicos y análisis longitudinal</p>
+                </div>
+                <div class="contact-card">
+                    <h3>👨‍💼 Director General</h3>
+                    <p><strong>Juan Heriberto Rosas Juarez</strong></p>
+                    <p><strong>Email:</strong> <a href="mailto:juanheriberto.rosas@lokusdata.com">juanheriberto.rosas@lokusdata.com</a></p>
+                    <p>Contacto directo para proyectos estratégicos</p>
+                </div>
+            </div>
+            
+            <a href="mailto:info@lokusdata.com?subject=Consulta%20Censos%20Económicos&body=Hola%20Lokus%20Data,%0D%0A%0D%0AMe%20interesa%20conocer%20más%20sobre%20los%20censos%20económicos%20longitudinales.%0D%0A%0D%0AEmpresa:%0D%0ASector:%0D%0AContacto:" class="cta-button">
+                Solicitar Consulta Estratégica
+            </a>
+            
+            <div class="back-to-home">
+                <a href="/">← Volver a Servicios de Retail</a>
+            </div>
+            
+            <div style="margin-top: 3rem; font-size: 1.2rem; font-weight: 600;">
+                <strong>La información más valiosa es la que sus competidores no tienen.<br>
+                En 2025, usted puede tenerla primero.</strong>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
