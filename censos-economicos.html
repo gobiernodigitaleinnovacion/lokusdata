@@ -50,16 +50,22 @@
             text-decoration: none;
         }
         
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
+        .logo-text {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .logo-sub {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 500;
         }
         
         .nav-links {
@@ -420,8 +426,43 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="/" class="logo">
-                <div class="logo-icon">📍</div>
-                <span>LokusData</span>
+                <svg class="logo-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width: 40px; height: 40px; margin-right: 10px;">
+                    <defs>
+                        <linearGradient id="headerBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="headerDataGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4fd1c7;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#38b2ac;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Círculo de fondo -->
+                    <circle cx="40" cy="40" r="36" fill="url(#headerBgGradient)"/>
+                    
+                    <!-- Símbolo de ubicación estilizado -->
+                    <path d="M40 15 C32 15 26 21 26 29 C26 35 32 45 40 55 C48 45 54 35 54 29 C54 21 48 15 40 15 Z" 
+                          fill="white" opacity="0.9"/>
+                    
+                    <!-- Punto central de ubicación -->
+                    <circle cx="40" cy="28" r="4" fill="url(#headerDataGradient)"/>
+                    
+                    <!-- Elementos de datos (puntos conectados) -->
+                    <circle cx="25" cy="50" r="2" fill="url(#headerDataGradient)"/>
+                    <circle cx="35" cy="60" r="2" fill="url(#headerDataGradient)"/>
+                    <circle cx="45" cy="60" r="2" fill="url(#headerDataGradient)"/>
+                    <circle cx="55" cy="50" r="2" fill="url(#headerDataGradient)"/>
+                    
+                    <!-- Líneas de conexión (representando flujo de datos) -->
+                    <path d="M27 52 L33 58 M37 58 L43 58 M47 58 L53 52" 
+                          stroke="url(#headerDataGradient)" stroke-width="1.5" fill="none" opacity="0.8"/>
+                </svg>
+                
+                <div class="logo-text">
+                    <div class="logo-main">LokusData</div>
+                    <div class="logo-sub">Inteligencia de Datos</div>
+                </div>
             </a>
             <ul class="nav-links">
                 <li><a href="/">Inicio</a></li>
