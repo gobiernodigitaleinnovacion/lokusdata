@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Censo Económico 2024 - Estructura Productiva Nacional | LokusData</title>
-    <meta name="description" content="Dashboard interactivo Censo Económico 2024 con análisis quinquenal de 6.37M unidades económicas, 27.1M empleados y estructura productiva completa de México.">
+    <title>CPV 2020 - Censo de Población y Vivienda | LokusData</title>
+    <meta name="description" content="Dashboard interactivo CPV 2020 con análisis granular hasta nivel manzana de 126M habitantes y 35M viviendas. Sistema de Inteligencia Demográfica oficial INEGI.">
     <style>
         * {
             margin: 0;
@@ -27,7 +27,7 @@
 
         /* Header */
         header {
-            background: #dc2626;
+            background: #059669;
             color: white;
             padding: 1rem 0;
             position: sticky;
@@ -56,13 +56,13 @@
         .logo-icon {
             width: 45px;
             height: 45px;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
 
         nav ul {
@@ -81,13 +81,13 @@
         }
 
         nav a:hover {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(16, 185, 129, 0.2);
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #ef4444 100%);
+            background: linear-gradient(135deg, #059669 0%, #047857 50%, #10b981 100%);
             color: white;
             padding: 4rem 0;
             text-align: center;
@@ -102,7 +102,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1.5" fill="rgba(239,68,68,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(239,68,68,0.1)"/><circle cx="40" cy="80" r="1.2" fill="rgba(239,68,68,0.1)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1.5" fill="rgba(16,185,129,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(16,185,129,0.1)"/><circle cx="40" cy="80" r="1.2" fill="rgba(16,185,129,0.1)"/></svg>');
             animation: float 20s linear infinite;
         }
 
@@ -119,7 +119,7 @@
         .hero-section h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #fca5a5 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #10b981 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -129,7 +129,7 @@
         .hero-subtitle {
             font-size: 1.4rem;
             margin-bottom: 2rem;
-            color: #fca5a5;
+            color: #a7f3d0;
             font-weight: 600;
         }
 
@@ -154,7 +154,7 @@
         .hero-stat-number {
             font-size: 2.2rem;
             font-weight: bold;
-            color: #fca5a5;
+            color: #10b981;
             margin-bottom: 0.5rem;
         }
 
@@ -165,21 +165,21 @@
 
         .hero-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             padding: 1.2rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
             transition: all 0.3s;
             margin-top: 1.5rem;
         }
 
         .hero-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
         }
 
         /* Dashboard Section */
@@ -191,7 +191,7 @@
         .dashboard-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #dc2626;
+            color: #059669;
             margin-bottom: 1rem;
             font-weight: 800;
         }
@@ -201,6 +201,36 @@
             color: #64748b;
             font-size: 1.2rem;
             margin-bottom: 2rem;
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .dashboard-tab {
+            background: #f1f5f9;
+            color: #059669;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            text-decoration: none;
+        }
+
+        .dashboard-tab.active {
+            background: #059669;
+            color: white;
+        }
+
+        .dashboard-tab:hover {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: #10b981;
         }
 
         .dashboard-container {
@@ -224,7 +254,7 @@
         }
 
         .btn-dashboard {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             padding: 1rem 2rem;
             border-radius: 10px;
@@ -233,12 +263,12 @@
             display: inline-block;
             margin: 0 1rem;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
         }
 
         .btn-dashboard:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
         }
 
         /* Hallazgos Section */
@@ -250,7 +280,7 @@
         .insights-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #dc2626;
+            color: #059669;
             margin-bottom: 3rem;
             font-weight: 800;
         }
@@ -270,10 +300,10 @@
             border-top: 5px solid;
         }
 
-        .insight-card.manufactura { border-top-color: #059669; }
-        .insight-card.comercio { border-top-color: #3b82f6; }
-        .insight-card.servicios { border-top-color: #8b5cf6; }
-        .insight-card.empleo { border-top-color: #f59e0b; }
+        .insight-card.urbano { border-top-color: #059669; }
+        .insight-card.educacion { border-top-color: #3b82f6; }
+        .insight-card.tecnologia { border-top-color: #8b5cf6; }
+        .insight-card.desarrollo { border-top-color: #f59e0b; }
 
         .insight-card:hover {
             transform: translateY(-10px);
@@ -287,7 +317,7 @@
 
         .insight-title {
             font-size: 1.4rem;
-            color: #dc2626;
+            color: #059669;
             margin-bottom: 1rem;
             font-weight: bold;
         }
@@ -301,89 +331,20 @@
         .insight-stat {
             font-size: 2rem;
             font-weight: bold;
-            color: #ef4444;
+            color: #10b981;
             margin-bottom: 0.5rem;
-        }
-
-        /* Temporal Section */
-        .temporal-section {
-            padding: 4rem 0;
-            background: white;
-        }
-
-        .temporal-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #dc2626;
-            margin-bottom: 2rem;
-            font-weight: 800;
-        }
-
-        .temporal-subtitle {
-            text-align: center;
-            color: #64748b;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-        }
-
-        .temporal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .temporal-card {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            border: 3px solid;
-            transition: all 0.3s;
-        }
-
-        .temporal-card.current { border-color: #059669; }
-        .temporal-card.available { border-color: #ef4444; }
-
-        .temporal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .temporal-year {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .temporal-year.current { color: #059669; }
-        .temporal-year.available { color: #ef4444; }
-
-        .temporal-status {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .temporal-status.current { color: #059669; }
-        .temporal-status.available { color: #ef4444; }
-
-        .temporal-description {
-            font-size: 0.85rem;
-            color: #64748b;
-            line-height: 1.5;
         }
 
         /* Granularidad Section */
         .granularidad-section {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            background: white;
         }
 
         .granularidad-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #dc2626;
+            color: #059669;
             margin-bottom: 2rem;
             font-weight: 800;
         }
@@ -405,12 +366,12 @@
         }
 
         .granularidad-level {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             padding: 1rem 1.5rem;
             border-radius: 10px;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
         }
 
         .granularidad-arrow {
@@ -426,7 +387,7 @@
         }
 
         .detail-card {
-            background: white;
+            background: #f8fafc;
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
@@ -436,26 +397,26 @@
         .detail-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #ef4444;
+            color: #10b981;
         }
 
         .detail-title {
             font-size: 1.1rem;
             font-weight: bold;
-            color: #dc2626;
+            color: #059669;
             margin-bottom: 0.5rem;
         }
 
         .detail-value {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ef4444;
+            color: #10b981;
         }
 
         /* Casos de Uso Section */
         .casos-section {
             padding: 5rem 0;
-            background: #dc2626;
+            background: #059669;
             color: white;
         }
 
@@ -482,8 +443,8 @@
         }
 
         .caso-tab {
-            background: rgba(239, 68, 68, 0.1);
-            color: #fca5a5;
+            background: rgba(16, 185, 129, 0.1);
+            color: #a7f3d0;
             padding: 1rem 2rem;
             border-radius: 10px;
             font-weight: bold;
@@ -493,12 +454,12 @@
         }
 
         .caso-tab.active {
-            background: #ef4444;
+            background: #10b981;
             color: white;
         }
 
         .caso-tab:hover {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(16, 185, 129, 0.2);
         }
 
         .casos-content {
@@ -521,7 +482,7 @@
         }
 
         .caso-number {
-            background: #ef4444;
+            background: #10b981;
             color: white;
             width: 30px;
             height: 30px;
@@ -537,7 +498,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 1rem;
-            color: #fca5a5;
+            color: #a7f3d0;
         }
 
         .caso-description {
@@ -548,15 +509,15 @@
         .bases-required {
             margin-top: 1rem;
             padding: 0.8rem;
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(16, 185, 129, 0.1);
             border-radius: 8px;
-            border-left: 3px solid #ef4444;
+            border-left: 3px solid #10b981;
         }
 
         .bases-required-title {
             font-size: 0.85rem;
             font-weight: bold;
-            color: #fca5a5;
+            color: #a7f3d0;
             margin-bottom: 0.5rem;
         }
 
@@ -568,7 +529,7 @@
         /* CTA Section */
         .cta-section {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             text-align: center;
         }
@@ -594,7 +555,7 @@
 
         .btn-cta {
             background: white;
-            color: #dc2626;
+            color: #059669;
             padding: 1.2rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -623,7 +584,7 @@
 
         .btn-cta-secondary:hover {
             background: white;
-            color: #dc2626;
+            color: #059669;
         }
 
         /* Responsive */
@@ -642,7 +603,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="../index.html" class="logo">
-                    <div class="logo-icon">🏭</div>
+                    <div class="logo-icon">👥</div>
                     <span>LokusData</span>
                 </a>
                 <nav>
@@ -660,152 +621,122 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1>Censo Económico 2024</h1>
-                <p class="hero-subtitle">Radiografía Completa de la Estructura Productiva Nacional</p>
+                <h1>CPV 2020</h1>
+                <p class="hero-subtitle">Censo de Población y Vivienda - Sistema de Inteligencia Demográfica</p>
                 
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <div class="hero-stat-number">6.37M</div>
-                        <div class="hero-stat-label">Unidades Económicas</div>
+                        <div class="hero-stat-number">126M</div>
+                        <div class="hero-stat-label">Habitantes Analizados</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">27.1M</div>
-                        <div class="hero-stat-label">Personal Ocupado</div>
+                        <div class="hero-stat-number">35M</div>
+                        <div class="hero-stat-label">Viviendas Habitadas</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">$54.6T</div>
-                        <div class="hero-stat-label">Ingresos Totales</div>
+                        <div class="hero-stat-number">189.4K</div>
+                        <div class="hero-stat-label">Localidades</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">570+</div>
-                        <div class="hero-stat-label">Actividades SCIAN</div>
+                        <div class="hero-stat-number">47,837</div>
+                        <div class="hero-stat-label">AGEBs Urbanas</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">2,469</div>
-                        <div class="hero-stat-label">Municipios</div>
+                        <div class="hero-stat-number">1.61M</div>
+                        <div class="hero-stat-label">Manzanas Urbanas</div>
                     </div>
                 </div>
                 
-                <a href="#dashboard" class="hero-cta">Explorar Dashboard Estructural</a>
+                <a href="#dashboard" class="hero-cta">Explorar Sistema Interactivo</a>
             </div>
         </div>
     </section>
 
     <section class="dashboard-section" id="dashboard">
         <div class="container">
-            <h2 class="dashboard-title">Dashboard Estructural Censo Económico 2024</h2>
-            <p class="dashboard-subtitle">Análisis quinquenal completo de la economía mexicana con datos de actividad empresarial 2023</p>
+            <h2 class="dashboard-title">Sistema de Inteligencia Demográfica CPV 2020</h2>
+            <p class="dashboard-subtitle">Análisis territorial completo desde nivel nacional hasta manzana urbana individual</p>
+            
+            <div class="dashboard-tabs">
+                <a href="#" class="dashboard-tab active" data-level="localidad">🏙️ Análisis por Localidad</a>
+                <a href="#" class="dashboard-tab" data-level="ageb">🎯 Análisis Granular AGEB</a>
+            </div>
             
             <div class="dashboard-container">
                 <iframe 
+                    id="dashboard-iframe"
                     class="dashboard-iframe"
-                    src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMmM0MTViNTMtMTg0OC00Y2RmLWJmMGYtNzQ0YTYyODYxZjM5IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9"
-                    title="Dashboard Censo Económico 2024"
+                    src="https://app.fabric.microsoft.com/view?r=eyJrIjoiYjVlN2NlYWQtNzZmMS00ZjEyLWE3YjktMjk5OWU4MTkyZDQ1IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9"
+                    title="Dashboard CPV 2020"
                     allowfullscreen>
                 </iframe>
             </div>
             
             <div class="dashboard-actions">
-                <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiMmM0MTViNTMtMTg0OC00Y2RmLWJmMGYtNzQ0YTYyODYxZjM5IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9" 
-                   target="_blank" class="btn-dashboard">
+                <a href="#" id="dashboard-link" target="_blank" class="btn-dashboard">
                     Abrir Dashboard Completo
                 </a>
-                <a href="#contacto" class="btn-dashboard">Solicitar Análisis Sectorial</a>
+                <a href="#contacto" class="btn-dashboard">Solicitar Análisis Personalizado</a>
             </div>
         </div>
     </section>
 
     <section class="insights-section">
         <div class="container">
-            <h2 class="insights-title">Hallazgos Clave de la Estructura Económica 2024</h2>
+            <h2 class="insights-title">Hallazgos Clave del Tejido Sociodemográfico Nacional</h2>
             
             <div class="insights-grid">
-                <div class="insight-card manufactura">
-                    <div class="insight-icon">🏭</div>
-                    <h3 class="insight-title">Fortaleza Manufacturera</h3>
-                    <div class="insight-stat">1.1M</div>
+                <div class="insight-card urbano">
+                    <div class="insight-icon">🏙️</div>
+                    <h3 class="insight-title">Concentración Urbana Dominante</h3>
+                    <div class="insight-stat">63.74%</div>
                     <p class="insight-description">
-                        1.1 millones de establecimientos manufactureros generan el 36.8% del valor agregado 
-                        nacional. La industria automotriz, alimentaria y química lideran la 
-                        competitividad industrial de México en el contexto del nearshoring.
+                        100.3 millones de mexicanos viven en áreas urbanas (63.74%), concentrados en las 
+                        10 principales localidades que albergan 14.9M habitantes. Esta concentración urbana 
+                        define patrones de consumo, empleo y desarrollo económico nacional.
                     </p>
                 </div>
 
-                <div class="insight-card comercio">
-                    <div class="insight-icon">🛒</div>
-                    <h3 class="insight-title">Ecosistema Comercial Diversificado</h3>
-                    <div class="insight-stat">2.8M</div>
+                <div class="insight-card educacion">
+                    <div class="insight-icon">🎓</div>
+                    <h3 class="insight-title">Brecha Educativa Territorial</h3>
+                    <div class="insight-stat">6.69</div>
                     <p class="insight-description">
-                        2.8 millones de unidades comerciales representan el 44% del total económico nacional. 
-                        Del comercio al mayoreo especializado hasta el retail hiperlocal, evidencian 
-                        una economía orientada al mercado interno robusto.
+                        Escolaridad promedio nacional de 6.69 años oculta enormes disparidades territoriales. 
+                        Las zonas urbanas desarrolladas alcanzan 11+ años mientras áreas rurales permanecen 
+                        en 4-5 años, determinando oportunidades laborales y movilidad social.
                     </p>
                 </div>
 
-                <div class="insight-card servicios">
-                    <div class="insight-icon">⚙️</div>
-                    <h3 class="insight-title">Revolución de Servicios Profesionales</h3>
-                    <div class="insight-stat">1.2M</div>
+                <div class="insight-card tecnologia">
+                    <div class="insight-icon">📱</div>
+                    <h3 class="insight-title">Brecha Digital Nacional</h3>
+                    <div class="insight-stat">48.08%</div>
                     <p class="insight-description">
-                        1.2 millones de establecimientos de servicios profesionales, técnicos y 
-                        especializados muestran la transición hacia una economía del conocimiento, 
-                        impulsada por digitalización y servicios de alto valor agregado.
+                        Solo 51.92% de hogares tiene acceso a internet, evidenciando una brecha digital 
+                        del 48.08% que limita oportunidades educativas, laborales y de participación 
+                        en la economía digital, especialmente en localidades rurales.
                     </p>
                 </div>
 
-                <div class="insight-card empleo">
-                    <div class="insight-icon">👥</div>
-                    <h3 class="insight-title">Generación de Empleo Formal</h3>
-                    <div class="insight-stat">27.1M</div>
+                <div class="insight-card desarrollo">
+                    <div class="insight-icon">🚀</div>
+                    <h3 class="insight-title">Proyección Demográfica 2030</h3>
+                    <div class="insight-stat">135.12M</div>
                     <p class="insight-description">
-                        27.1 millones de empleos formales con un crecimiento del 8.2% vs. 2019. 
-                        La digitalización y nuevas industrias (e-commerce, tecnología, energías renovables) 
-                        están transformando el mercado laboral mexicano.
+                        México alcanzará 135.12 millones de habitantes en 2030 con IA predictiva. 
+                        1,440 polos de desarrollo identificados y 96K alertas críticas requieren 
+                        planificación territorial estratégica para el crecimiento sostenible.
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="temporal-section">
-        <div class="container">
-            <h2 class="temporal-title">Serie Histórica Quinquenal</h2>
-            <p class="temporal-subtitle">Evolución estructural de la economía mexicana con datos comparables</p>
-            
-            <div class="temporal-grid">
-                <div class="temporal-card current">
-                    <div class="temporal-year current">2024</div>
-                    <div class="temporal-status current">DASHBOARD ACTIVO</div>
-                    <p class="temporal-description">Datos económicos 2023 completos con nuevas variables: discapacidad, tecnologías digitales, formalidad.</p>
-                </div>
-                <div class="temporal-card available">
-                    <div class="temporal-year available">2019</div>
-                    <div class="temporal-status available">DISPONIBLE</div>
-                    <p class="temporal-description">Línea base pre-pandemia para análisis comparativos de crecimiento y resiliencia económica.</p>
-                </div>
-                <div class="temporal-card available">
-                    <div class="temporal-year available">2014</div>
-                    <div class="temporal-status available">DISPONIBLE</div>
-                    <p class="temporal-description">Era pre-reforma energética, útil para estudios de evolución sectorial y competitividad.</p>
-                </div>
-                <div class="temporal-card available">
-                    <div class="temporal-year available">2009</div>
-                    <div class="temporal-status available">DISPONIBLE</div>
-                    <p class="temporal-description">Post-crisis financiera global, base para análisis de recuperación y transformación económica.</p>
-                </div>
-            </div>
-            
-            <p style="text-align: center; margin-top: 2rem; color: #64748b;">
-                <strong>Análisis longitudinal disponible:</strong> Estudios de evolución sectorial 2009-2024, 
-                impacto de políticas industriales, y proyecciones de competitividad.
-            </p>
         </div>
     </section>
 
     <section class="granularidad-section">
         <div class="container">
-            <h2 class="granularidad-title">Granularidad Territorial y Sectorial</h2>
-            <p class="granularidad-subtitle">Análisis desde clusters nacionales hasta establecimientos individuales por localidad</p>
+            <h2 class="granularidad-title">Granularidad Territorial sin Precedentes</h2>
+            <p class="granularidad-subtitle">Del panorama nacional hasta el análisis hiperlocal de manzana urbana</p>
             
             <div class="granularidad-flow">
                 <div class="granularidad-level">Nacional</div>
@@ -816,39 +747,41 @@
                 <div class="granularidad-arrow">→</div>
                 <div class="granularidad-level">Localidad</div>
                 <div class="granularidad-arrow">→</div>
-                <div class="granularidad-level">Establecimiento</div>
+                <div class="granularidad-level">AGEB</div>
+                <div class="granularidad-arrow">→</div>
+                <div class="granularidad-level">Manzana</div>
             </div>
             
             <div class="granularidad-details">
                 <div class="detail-card">
                     <div class="detail-icon">📅</div>
                     <div class="detail-title">Periodicidad</div>
-                    <div class="detail-value">Quinquenal</div>
+                    <div class="detail-value">Decenal</div>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">🏢</div>
+                    <div class="detail-icon">🏠</div>
                     <div class="detail-title">Cobertura</div>
-                    <div class="detail-value">99.8% Economía</div>
+                    <div class="detail-value">Universal</div>
                 </div>
                 <div class="detail-card">
                     <div class="detail-icon">📊</div>
                     <div class="detail-title">Variables</div>
-                    <div class="detail-value">185+ Campos</div>
+                    <div class="detail-value">222 Campos</div>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">🏭</div>
-                    <div class="detail-title">Clasificación</div>
-                    <div class="detail-value">SCIAN 2023</div>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🔗</div>
+                    <div class="detail-icon">🎯</div>
                     <div class="detail-title">Integración</div>
                     <div class="detail-value">CVEGEO</div>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">🆕</div>
-                    <div class="detail-title">Novedad 2024</div>
-                    <div class="detail-value">Formal/Informal</div>
+                    <div class="detail-icon">🔍</div>
+                    <div class="detail-title">Índices</div>
+                    <div class="detail-value">IDT Territorial</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">🤖</div>
+                    <div class="detail-title">IA Predictiva</div>
+                    <div class="detail-value">Proyección 2030</div>
                 </div>
             </div>
         </div>
@@ -856,13 +789,13 @@
 
     <section class="casos-section">
         <div class="container">
-            <h2 class="casos-title">Estudios Estratégicos con Censos Económicos</h2>
-            <p class="casos-subtitle">Casos de uso específicos para maximizar el valor de la inteligencia estructural económica</p>
+            <h2 class="casos-title">Estudios Estratégicos con CPV 2020</h2>
+            <p class="casos-subtitle">Casos de uso específicos para maximizar el valor de la inteligencia demográfica</p>
             
             <div class="casos-tabs">
                 <div class="caso-tab active">Sector Privado</div>
                 <div class="caso-tab">Sector Público</div>
-                <div class="caso-tab">Nearshoring</div>
+                <div class="caso-tab">Análisis Territorial</div>
             </div>
             
             <div class="casos-content" id="casos-content">
@@ -873,15 +806,15 @@
 
     <section class="cta-section" id="contacto">
         <div class="container">
-            <h2 class="cta-title">Analiza la Estructura Económica de tu Sector</h2>
+            <h2 class="cta-title">Descubre el Potencial Demográfico de tu Territorio</h2>
             <p class="cta-subtitle">
-                Consultoría especializada en análisis sectorial y competitividad con datos oficiales 
-                del Censo Económico 2024 y metodología de clusters industriales
+                Análisis personalizado del tejido sociodemográfico con datos oficiales CPV 2020 
+                y metodología de inteligencia territorial avanzada hasta nivel manzana
             </p>
             
             <div class="cta-buttons">
                 <a href="mailto:juanheriberto.rosas@lokusdata.com" class="btn-cta">
-                    Consultoría Sectorial
+                    Consultoría Personalizada
                 </a>
                 <a href="https://api.whatsapp.com/send/?phone=525510806597&text&type=phone_number&app_absent=0" 
                    target="_blank" class="btn-cta-secondary">
@@ -892,8 +825,37 @@
     </section>
 
     <script>
-        // Funcionalidad para tabs de casos de uso
+        // Funcionalidad para tabs de dashboards
         document.addEventListener('DOMContentLoaded', function() {
+            const dashboardTabs = document.querySelectorAll('.dashboard-tab');
+            const dashboardIframe = document.getElementById('dashboard-iframe');
+            const dashboardLink = document.getElementById('dashboard-link');
+            
+            // URLs de los dashboards
+            const dashboardUrls = {
+                'localidad': 'https://app.fabric.microsoft.com/view?r=eyJrIjoiYjVlN2NlYWQtNzZmMS00ZjEyLWE3YjktMjk5OWU4MTkyZDQ1IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9',
+                'ageb': 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZWQzNjAwNDktZGQ4OS00ZGE0LWI3NGMtZGMzMmY3ZWE4MjE2IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9'
+            };
+            
+            dashboardTabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remover clase active de todos los tabs
+                    dashboardTabs.forEach(t => t.classList.remove('active'));
+                    // Agregar clase active al tab clickeado
+                    this.classList.add('active');
+                    
+                    // Cambiar el dashboard
+                    const level = this.getAttribute('data-level');
+                    const newUrl = dashboardUrls[level];
+                    
+                    dashboardIframe.src = newUrl;
+                    dashboardLink.href = newUrl;
+                });
+            });
+
+            // Funcionalidad para tabs de casos de uso
             const tabs = document.querySelectorAll('.caso-tab');
             const casosContent = document.getElementById('casos-content');
             
@@ -902,117 +864,117 @@
                 'Sector Privado': [
                     {
                         number: 1,
-                        title: 'Análisis de Competitividad Sectorial',
-                        description: 'Benchmarking detallado de productividad, márgenes, crecimiento y posicionamiento competitivo vs. competidores directos. Identificación de líderes sectoriales y mejores prácticas.',
-                        bases: '✅ CE únicamente (variables de productividad, ingresos, gastos, personal ocupado por sector)'
+                        title: 'Segmentación Demográfica Hiperlocal',
+                        description: 'Análisis granular de estructura poblacional por AGEB/manzana para identificar perfiles de consumidor ideales. Mapeo de edad, escolaridad, estructura familiar y poder adquisitivo con precisión territorial.',
+                        bases: '✅ CPV únicamente (variables demográficas completas por manzana)'
                     },
                     {
                         number: 2,
-                        title: 'Mapeo de Cadenas de Valor',
-                        description: 'Identificación completa de proveedores, clientes y socios estratégicos por región. Análisis de integración vertical y horizontal, oportunidades de fusiones y alianzas.',
-                        bases: '🔗 CE + DENUE (estructura sectorial + ubicación geográfica de empresas complementarias)'
+                        title: 'Selección de Ubicaciones por Densidad Poblacional',
+                        description: 'Optimización de puntos de venta mediante análisis de densidad poblacional objetivo. Identificación de zonas con alta concentración del mercado meta con granularidad de manzana.',
+                        bases: '✅ CPV únicamente (población total + estructura demográfica por coordenadas)'
                     },
                     {
                         number: 3,
-                        title: 'Estrategias de Expansión Geográfica',
-                        description: 'Identificación de mercados regionales con mayor dinamismo económico, menor competencia y condiciones favorables para entrada o expansión de operaciones.',
-                        bases: '✅ CE únicamente (concentración sectorial, crecimiento regional, análisis de mercados)'
+                        title: 'Análisis de Catchment Areas Demográficas',
+                        description: 'Definición de áreas de influencia comercial basada en características poblacionales específicas. Radio de acción optimizado según perfil demográfico del cliente objetivo.',
+                        bases: '🔗 CPV + Marco Geoestadístico (análisis de proximidad geográfica)'
                     },
                     {
                         number: 4,
-                        title: 'Evaluación de Mercados para Fusiones/Adquisiciones',
-                        description: 'Análisis de estructura de mercado, concentración sectorial, identificación de targets potenciales y valoración de oportunidades de consolidación industrial.',
-                        bases: '✅ CE únicamente (número de empresas, tamaño, ingresos, participación de mercado)'
+                        title: 'Planificación de Productos por Ciclo de Vida',
+                        description: 'Desarrollo de estrategias comerciales basadas en estructura etaria local. Identificación de productos/servicios óptimos según composición demográfica del territorio.',
+                        bases: '✅ CPV únicamente (distribución por grupos de edad detallada)'
                     },
                     {
                         number: 5,
-                        title: 'Análisis de Productividad y Eficiencia',
-                        description: 'Estudios comparativos de productividad laboral, eficiencia operativa y rentabilidad vs. promedios sectoriales para identificar oportunidades de mejora.',
-                        bases: '✅ CE únicamente (personal ocupado, ingresos, gastos, valor agregado, activos)'
+                        title: 'Análisis de Potencial Habitacional',
+                        description: 'Evaluación de demanda potencial de vivienda nueva mediante análisis de crecimiento poblacional, formación de hogares y déficit habitacional por zona.',
+                        bases: '✅ CPV únicamente (hogares, vivienda, crecimiento demográfico)'
                     },
                     {
                         number: 6,
-                        title: 'Inteligencia de Mercado B2B',
-                        description: 'Dimensionamiento de mercados objetivo, identificación de clientes potenciales por tamaño y capacidad de compra, estrategias de segmentación empresarial.',
-                        bases: '✅ CE únicamente (estructura empresarial por tamaño, gastos por categoría, cadenas de valor)'
+                        title: 'Estrategias de Marketing Territorial',
+                        description: 'Diseño de campañas publicitarias específicas por territorio considerando nivel educativo, estructura familiar y características sociodemográficas locales.',
+                        bases: '✅ CPV únicamente (educación, familia, características sociales)'
                     }
                 ],
                 
                 'Sector Público': [
                     {
                         number: 1,
-                        title: 'Diseño de Política Industrial',
-                        description: 'Identificación de sectores estratégicos, clusters industriales emergentes y vocaciones productivas regionales para diseño de incentivos y programas de desarrollo.',
-                        bases: '✅ CE únicamente (especialización productiva, competitividad sectorial, mapeo industrial)'
+                        title: 'Planificación de Infraestructura Educativa',
+                        description: 'Dimensionamiento y ubicación óptima de escuelas basado en población en edad escolar actual y proyectada. Análisis de cobertura educativa y brechas territoriales.',
+                        bases: '✅ CPV únicamente (población 3-17 años + análisis de cobertura escolar)'
                     },
                     {
                         number: 2,
-                        title: 'Programas de Formalización Empresarial',
-                        description: 'Mapeo de sectores y regiones con alta informalidad. Diseño de estrategias diferenciadas de formalización según características sectoriales y territoriales.',
-                        bases: '✅ CE únicamente (nueva variable formal/informal 2024 + características sectoriales)'
+                        title: 'Focalización de Programas de Salud',
+                        description: 'Identificación de zonas prioritarias para servicios de salud mediante análisis de población vulnerable: adultos mayores, embarazadas, población sin acceso a servicios.',
+                        bases: '✅ CPV únicamente (estructura etaria + acceso a servicios de salud)'
                     },
                     {
                         number: 3,
-                        title: 'Planificación de Parques Industriales',
-                        description: 'Identificación de ubicaciones óptimas para desarrollo de infraestructura industrial basada en concentración sectorial, cadenas de valor y ventajas territoriales.',
-                        bases: '🔗 CE + Marco Geoestadístico (clusters industriales + infraestructura + conectividad)'
+                        title: 'Política de Vivienda Social',
+                        description: 'Mapeo de déficit habitacional y hacinamiento para priorizar programas de vivienda social. Identificación de zonas con mayor necesidad de mejoramiento habitacional.',
+                        bases: '✅ CPV únicamente (condiciones de vivienda + densidad habitacional)'
                     },
                     {
                         number: 4,
-                        title: 'Evaluación de Impacto de Políticas',
-                        description: 'Medición del efecto de programas de apoyo empresarial, incentivos fiscales y políticas sectoriales comparando evolución 2019 vs 2024.',
-                        bases: '🔗 CE 2019 + CE 2024 (análisis comparativo de crecimiento sectorial y territorial)'
+                        title: 'Desarrollo Urbano Sustentable',
+                        description: 'Planificación de crecimiento urbano basada en densidad poblacional actual, servicios básicos disponibles y capacidad de carga territorial.',
+                        bases: '✅ CPV únicamente (densidad + servicios básicos + análisis territorial)'
                     },
                     {
                         number: 5,
-                        title: 'Estrategias de Atracción de Inversión',
-                        description: 'Perfilado de ventajas competitivas territoriales y sectoriales para marketing de destinos de inversión. Identificación de sectores objetivo para promoción.',
-                        bases: '✅ CE únicamente (fortalezas sectoriales, productividad, crecimiento, ecosistemas)'
+                        title: 'Programas de Inclusión Digital',
+                        description: 'Identificación de brechas digitales territoriales para programas de conectividad. Priorización de inversión en infraestructura digital por nivel de rezago.',
+                        bases: '✅ CPV únicamente (acceso a internet + TIC por hogar + nivel educativo)'
                     },
                     {
                         number: 6,
-                        title: 'Desarrollo de Proveedores Locales',
-                        description: 'Identificación de brechas en cadenas de suministro locales y oportunidades para desarrollo de proveedores PYME que atiendan grandes empresas.',
-                        bases: '✅ CE únicamente (análisis de cadenas de valor, compras empresariales, gaps de proveeduría)'
+                        title: 'Análisis de Vulnerabilidad Social',
+                        description: 'Mapeo multidimensional de vulnerabilidad social considerando educación, discapacidad, población indígena y condiciones habitacionales para programas focalizados.',
+                        bases: '✅ CPV únicamente (múltiples dimensiones sociales integradas)'
                     }
                 ],
                 
-                'Nearshoring': [
+                'Análisis Territorial': [
                     {
                         number: 1,
-                        title: 'Mapeo de Ecosistemas Industriales',
-                        description: 'Identificación de clusters industriales consolidados y emergentes por sector. Análisis de densidad de proveedores, servicios de apoyo y infraestructura especializada.',
-                        bases: '✅ CE únicamente (concentración sectorial, análisis de clusters, cadenas productivas)'
+                        title: 'Identificación de Polos de Desarrollo',
+                        description: 'Análisis de concentración demográfica y económica para identificar centros urbanos emergentes y polos de atracción poblacional con potencial de crecimiento.',
+                        bases: '✅ CPV únicamente (densidad poblacional + características urbanas)'
                     },
                     {
                         number: 2,
-                        title: 'Análisis de Capacidad Productiva',
-                        description: 'Evaluación de la capacidad instalada, utilización de activos y potencial de escalamiento de sectores clave para empresas relocalizando desde Asia.',
-                        bases: '✅ CE únicamente (activos fijos, capacidad productiva, utilización, crecimiento sectorial)'
+                        title: 'Estudios de Migración Interna',
+                        description: 'Análisis de patrones migratorios internos mediante comparación de lugar de nacimiento vs. residencia actual. Identificación de flujos migratorios principales.',
+                        bases: '✅ CPV únicamente (lugar de nacimiento + residencia hace 5 años)'
                     },
                     {
                         number: 3,
-                        title: 'Benchmarking de Productividad vs. Asia',
-                        description: 'Comparación de productividad laboral, costos de producción y eficiencia manufacturera mexicana vs. principales destinos asiáticos de producción.',
-                        bases: '✅ CE únicamente (productividad laboral, costos unitarios, eficiencia operativa)'
+                        title: 'Análisis de Segregación Urbana',
+                        description: 'Medición de segregación socioeconómica y educativa dentro de áreas metropolitanas. Identificación de zonas homogéneas vs. heterogéneas socialmente.',
+                        bases: '✅ CPV únicamente (educación + características socioeconómicas por AGEB)'
                     },
                     {
                         number: 4,
-                        title: 'Evaluación de Proveedores Tier 1/2/3',
-                        description: 'Mapeo completo de cadenas de suministro disponibles por sector. Identificación de proveedores de primer, segundo y tercer nivel para empresas manufactureras.',
-                        bases: '🔗 CE + DENUE (cadenas de valor detalladas + ubicación geográfica de proveedores)'
+                        title: 'Tipologías Territoriales',
+                        description: 'Clasificación de territorios según características demográficas dominantes: urbano joven, urbano envejecido, rural tradicional, áreas de transición.',
+                        bases: '✅ CPV únicamente (análisis multivariado de características demográficas)'
                     },
                     {
                         number: 5,
-                        title: 'Análisis de Costos de Establecimiento',
-                        description: 'Evaluación de costos de entrada a diferentes mercados regionales: mano de obra, energía, terrenos, logística, servicios profesionales.',
-                        bases: '✅ CE únicamente (costos laborales, gastos operativos, análisis de competitividad de costos)'
+                        title: 'Análisis de Competitividad Territorial',
+                        description: 'Construcción del Índice de Desarrollo Territorial (IDT) integrando componentes económicos, sociales, de infraestructura y territoriales para ranking nacional.',
+                        bases: '✅ CPV únicamente (metodología IDT completa con múltiples dimensiones)'
                     },
                     {
                         number: 6,
-                        title: 'Identificación de Sectores Prioritarios',
-                        description: 'Análisis de sectores con mayor potencial de crecimiento por nearshoring: automotriz, aeroespacial, electrónicos, textil, dispositivos médicos.',
-                        bases: '🔗 CE series temporales 2014-2024 (tendencias de crecimiento sectorial y competitividad)'
+                        title: 'Proyecciones Demográficas Locales',
+                        description: 'Modelado predictivo de crecimiento poblacional a nivel AGEB usando IA. Identificación de zonas de crecimiento acelerado, estancamiento o declive demográfico.',
+                        bases: '✅ CPV únicamente (tendencias demográficas + modelos predictivos con IA)'
                     }
                 ]
             };

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Censo Económico 2024 - Estructura Productiva Nacional | LokusData</title>
-    <meta name="description" content="Dashboard interactivo Censo Económico 2024 con análisis quinquenal de 6.37M unidades económicas, 27.1M empleados y estructura productiva completa de México.">
+    <title>ENIGH 2024 - Encuesta Nacional de Ingresos y Gastos de los Hogares | LokusData</title>
+    <meta name="description" content="Dashboard interactivo ENIGH 2024 con análisis estatal de ingresos, gastos y patrones de consumo de 38.8M hogares mexicanos. Inteligencia socioeconómica oficial INEGI.">
     <style>
         * {
             margin: 0;
@@ -27,7 +27,7 @@
 
         /* Header */
         header {
-            background: #dc2626;
+            background: #1e40af;
             color: white;
             padding: 1rem 0;
             position: sticky;
@@ -56,13 +56,13 @@
         .logo-icon {
             width: 45px;
             height: 45px;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
 
         nav ul {
@@ -81,13 +81,13 @@
         }
 
         nav a:hover {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(59, 130, 246, 0.2);
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #ef4444 100%);
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 50%, #3b82f6 100%);
             color: white;
             padding: 4rem 0;
             text-align: center;
@@ -102,7 +102,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1.5" fill="rgba(239,68,68,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(239,68,68,0.1)"/><circle cx="40" cy="80" r="1.2" fill="rgba(239,68,68,0.1)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1.5" fill="rgba(59,130,246,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(59,130,246,0.1)"/><circle cx="40" cy="80" r="1.2" fill="rgba(59,130,246,0.1)"/></svg>');
             animation: float 20s linear infinite;
         }
 
@@ -119,7 +119,7 @@
         .hero-section h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #fca5a5 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -129,7 +129,7 @@
         .hero-subtitle {
             font-size: 1.4rem;
             margin-bottom: 2rem;
-            color: #fca5a5;
+            color: #93c5fd;
             font-weight: 600;
         }
 
@@ -154,7 +154,7 @@
         .hero-stat-number {
             font-size: 2.2rem;
             font-weight: bold;
-            color: #fca5a5;
+            color: #3b82f6;
             margin-bottom: 0.5rem;
         }
 
@@ -165,21 +165,21 @@
 
         .hero-cta {
             display: inline-block;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
             padding: 1.2rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
             transition: all 0.3s;
             margin-top: 1.5rem;
         }
 
         .hero-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
         }
 
         /* Dashboard Section */
@@ -191,7 +191,7 @@
         .dashboard-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #dc2626;
+            color: #1e40af;
             margin-bottom: 1rem;
             font-weight: 800;
         }
@@ -224,7 +224,7 @@
         }
 
         .btn-dashboard {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
             padding: 1rem 2rem;
             border-radius: 10px;
@@ -233,12 +233,12 @@
             display: inline-block;
             margin: 0 1rem;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
         }
 
         .btn-dashboard:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
 
         /* Hallazgos Section */
@@ -250,7 +250,7 @@
         .insights-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #dc2626;
+            color: #1e40af;
             margin-bottom: 3rem;
             font-weight: 800;
         }
@@ -270,10 +270,10 @@
             border-top: 5px solid;
         }
 
-        .insight-card.manufactura { border-top-color: #059669; }
-        .insight-card.comercio { border-top-color: #3b82f6; }
-        .insight-card.servicios { border-top-color: #8b5cf6; }
-        .insight-card.empleo { border-top-color: #f59e0b; }
+        .insight-card.economia { border-top-color: #059669; }
+        .insight-card.desigualdad { border-top-color: #dc2626; }
+        .insight-card.consumo { border-top-color: #7c3aed; }
+        .insight-card.regional { border-top-color: #ea580c; }
 
         .insight-card:hover {
             transform: translateY(-10px);
@@ -287,7 +287,7 @@
 
         .insight-title {
             font-size: 1.4rem;
-            color: #dc2626;
+            color: #1e40af;
             margin-bottom: 1rem;
             font-weight: bold;
         }
@@ -301,89 +301,20 @@
         .insight-stat {
             font-size: 2rem;
             font-weight: bold;
-            color: #ef4444;
+            color: #3b82f6;
             margin-bottom: 0.5rem;
-        }
-
-        /* Temporal Section */
-        .temporal-section {
-            padding: 4rem 0;
-            background: white;
-        }
-
-        .temporal-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #dc2626;
-            margin-bottom: 2rem;
-            font-weight: 800;
-        }
-
-        .temporal-subtitle {
-            text-align: center;
-            color: #64748b;
-            font-size: 1.2rem;
-            margin-bottom: 3rem;
-        }
-
-        .temporal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .temporal-card {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            border: 3px solid;
-            transition: all 0.3s;
-        }
-
-        .temporal-card.current { border-color: #059669; }
-        .temporal-card.available { border-color: #ef4444; }
-
-        .temporal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .temporal-year {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .temporal-year.current { color: #059669; }
-        .temporal-year.available { color: #ef4444; }
-
-        .temporal-status {
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .temporal-status.current { color: #059669; }
-        .temporal-status.available { color: #ef4444; }
-
-        .temporal-description {
-            font-size: 0.85rem;
-            color: #64748b;
-            line-height: 1.5;
         }
 
         /* Granularidad Section */
         .granularidad-section {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            background: white;
         }
 
         .granularidad-title {
             text-align: center;
             font-size: 2.5rem;
-            color: #dc2626;
+            color: #1e40af;
             margin-bottom: 2rem;
             font-weight: 800;
         }
@@ -405,12 +336,12 @@
         }
 
         .granularidad-level {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
             padding: 1rem 1.5rem;
             border-radius: 10px;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
         }
 
         .granularidad-arrow {
@@ -426,7 +357,7 @@
         }
 
         .detail-card {
-            background: white;
+            background: #f8fafc;
             border-radius: 15px;
             padding: 2rem;
             text-align: center;
@@ -436,26 +367,95 @@
         .detail-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #ef4444;
+            color: #3b82f6;
         }
 
         .detail-title {
             font-size: 1.1rem;
             font-weight: bold;
-            color: #dc2626;
+            color: #1e40af;
             margin-bottom: 0.5rem;
         }
 
         .detail-value {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #ef4444;
+            color: #3b82f6;
+        }
+
+        /* Temporal Section */
+        .temporal-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        }
+
+        .temporal-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .temporal-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .temporal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .temporal-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid;
+            transition: all 0.3s;
+        }
+
+        .temporal-card.current { border-color: #059669; }
+        .temporal-card.available { border-color: #3b82f6; }
+
+        .temporal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .temporal-year {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .temporal-year.current { color: #059669; }
+        .temporal-year.available { color: #3b82f6; }
+
+        .temporal-status {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .temporal-status.current { color: #059669; }
+        .temporal-status.available { color: #3b82f6; }
+
+        .temporal-description {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.5;
         }
 
         /* Casos de Uso Section */
         .casos-section {
             padding: 5rem 0;
-            background: #dc2626;
+            background: #1e40af;
             color: white;
         }
 
@@ -482,8 +482,8 @@
         }
 
         .caso-tab {
-            background: rgba(239, 68, 68, 0.1);
-            color: #fca5a5;
+            background: rgba(59, 130, 246, 0.1);
+            color: #93c5fd;
             padding: 1rem 2rem;
             border-radius: 10px;
             font-weight: bold;
@@ -493,12 +493,12 @@
         }
 
         .caso-tab.active {
-            background: #ef4444;
+            background: #3b82f6;
             color: white;
         }
 
         .caso-tab:hover {
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(59, 130, 246, 0.2);
         }
 
         .casos-content {
@@ -521,7 +521,7 @@
         }
 
         .caso-number {
-            background: #ef4444;
+            background: #3b82f6;
             color: white;
             width: 30px;
             height: 30px;
@@ -537,7 +537,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 1rem;
-            color: #fca5a5;
+            color: #93c5fd;
         }
 
         .caso-description {
@@ -548,15 +548,15 @@
         .bases-required {
             margin-top: 1rem;
             padding: 0.8rem;
-            background: rgba(239, 68, 68, 0.1);
+            background: rgba(59, 130, 246, 0.1);
             border-radius: 8px;
-            border-left: 3px solid #ef4444;
+            border-left: 3px solid #3b82f6;
         }
 
         .bases-required-title {
             font-size: 0.85rem;
             font-weight: bold;
-            color: #fca5a5;
+            color: #93c5fd;
             margin-bottom: 0.5rem;
         }
 
@@ -568,7 +568,7 @@
         /* CTA Section */
         .cta-section {
             padding: 4rem 0;
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
             color: white;
             text-align: center;
         }
@@ -594,7 +594,7 @@
 
         .btn-cta {
             background: white;
-            color: #dc2626;
+            color: #1e40af;
             padding: 1.2rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -623,7 +623,7 @@
 
         .btn-cta-secondary:hover {
             background: white;
-            color: #dc2626;
+            color: #1e40af;
         }
 
         /* Responsive */
@@ -642,7 +642,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="../index.html" class="logo">
-                    <div class="logo-icon">🏭</div>
+                    <div class="logo-icon">💰</div>
                     <span>LokusData</span>
                 </a>
                 <nav>
@@ -660,209 +660,202 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1>Censo Económico 2024</h1>
-                <p class="hero-subtitle">Radiografía Completa de la Estructura Productiva Nacional</p>
+                <h1>ENIGH 2024</h1>
+                <p class="hero-subtitle">Encuesta Nacional de Ingresos y Gastos de los Hogares</p>
                 
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <div class="hero-stat-number">6.37M</div>
-                        <div class="hero-stat-label">Unidades Económicas</div>
+                        <div class="hero-stat-number">130.2M</div>
+                        <div class="hero-stat-label">Habitantes Analizados</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">27.1M</div>
-                        <div class="hero-stat-label">Personal Ocupado</div>
+                        <div class="hero-stat-number">38.8M</div>
+                        <div class="hero-stat-label">Hogares Representados</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">$54.6T</div>
-                        <div class="hero-stat-label">Ingresos Totales</div>
+                        <div class="hero-stat-number">$77,860</div>
+                        <div class="hero-stat-label">Ingreso Promedio Nacional</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">570+</div>
-                        <div class="hero-stat-label">Actividades SCIAN</div>
+                        <div class="hero-stat-number">32</div>
+                        <div class="hero-stat-label">Entidades Federativas</div>
                     </div>
                     <div class="hero-stat">
-                        <div class="hero-stat-number">2,469</div>
-                        <div class="hero-stat-label">Municipios</div>
+                        <div class="hero-stat-number">6</div>
+                        <div class="hero-stat-label">Categorías de Gasto</div>
                     </div>
                 </div>
                 
-                <a href="#dashboard" class="hero-cta">Explorar Dashboard Estructural</a>
+                <a href="#dashboard" class="hero-cta">Explorar Dashboard Interactivo</a>
             </div>
         </div>
     </section>
 
     <section class="dashboard-section" id="dashboard">
         <div class="container">
-            <h2 class="dashboard-title">Dashboard Estructural Censo Económico 2024</h2>
-            <p class="dashboard-subtitle">Análisis quinquenal completo de la economía mexicana con datos de actividad empresarial 2023</p>
+            <h2 class="dashboard-title">Dashboard Interactivo ENIGH 2024</h2>
+            <p class="dashboard-subtitle">Radiografía socioeconómica completa de México con análisis por entidad federativa</p>
             
             <div class="dashboard-container">
                 <iframe 
                     class="dashboard-iframe"
-                    src="https://app.fabric.microsoft.com/view?r=eyJrIjoiMmM0MTViNTMtMTg0OC00Y2RmLWJmMGYtNzQ0YTYyODYxZjM5IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9"
-                    title="Dashboard Censo Económico 2024"
+                    src="https://app.powerbi.com/view?r=eyJrIjoiNDMzNzgyYzItMjI5My00ZTdhLTllY2MtMmU5ZjkxMzE2OWYzIiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9"
+                    title="Dashboard ENIGH 2024"
                     allowfullscreen>
                 </iframe>
             </div>
             
             <div class="dashboard-actions">
-                <a href="https://app.fabric.microsoft.com/view?r=eyJrIjoiMmM0MTViNTMtMTg0OC00Y2RmLWJmMGYtNzQ0YTYyODYxZjM5IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9" 
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNDMzNzgyYzItMjI5My00ZTdhLTllY2MtMmU5ZjkxMzE2OWYzIiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9" 
                    target="_blank" class="btn-dashboard">
                     Abrir Dashboard Completo
                 </a>
-                <a href="#contacto" class="btn-dashboard">Solicitar Análisis Sectorial</a>
+                <a href="#contacto" class="btn-dashboard">Solicitar Análisis Personalizado</a>
             </div>
         </div>
     </section>
 
     <section class="insights-section">
         <div class="container">
-            <h2 class="insights-title">Hallazgos Clave de la Estructura Económica 2024</h2>
+            <h2 class="insights-title">Hallazgos Clave del Comportamiento Socioeconómico</h2>
             
             <div class="insights-grid">
-                <div class="insight-card manufactura">
-                    <div class="insight-icon">🏭</div>
-                    <h3 class="insight-title">Fortaleza Manufacturera</h3>
-                    <div class="insight-stat">1.1M</div>
+                <div class="insight-card economia">
+                    <div class="insight-icon">💰</div>
+                    <h3 class="insight-title">Polarización Económica Nacional</h3>
+                    <div class="insight-stat">2.4x</div>
                     <p class="insight-description">
-                        1.1 millones de establecimientos manufactureros generan el 36.8% del valor agregado 
-                        nacional. La industria automotriz, alimentaria y química lideran la 
-                        competitividad industrial de México en el contexto del nearshoring.
+                        Nuevo León ($117,034) vs. Chiapas ($48,548) muestran una brecha de ingreso promedio 
+                        de 2.4 veces, evidenciando profundas desigualdades regionales que determinan 
+                        patrones de consumo y calidad de vida completamente diferentes.
                     </p>
                 </div>
 
-                <div class="insight-card comercio">
+                <div class="insight-card desigualdad">
+                    <div class="insight-icon">📊</div>
+                    <h3 class="insight-title">Concentración del Poder Adquisitivo</h3>
+                    <div class="insight-stat">TOP 5</div>
+                    <p class="insight-description">
+                        Solo 5 entidades (Nuevo León, CDMX, BCS, Baja California, Querétaro) concentran 
+                        los niveles de ingreso superiores a $97,000, mientras 27 entidades permanecen 
+                        por debajo del promedio nacional de $77,860.
+                    </p>
+                </div>
+
+                <div class="insight-card consumo">
                     <div class="insight-icon">🛒</div>
-                    <h3 class="insight-title">Ecosistema Comercial Diversificado</h3>
-                    <div class="insight-stat">2.8M</div>
+                    <h3 class="insight-title">Patrón Alimentario Nacional</h3>
+                    <div class="insight-stat">37.7%</div>
                     <p class="insight-description">
-                        2.8 millones de unidades comerciales representan el 44% del total económico nacional. 
-                        Del comercio al mayoreo especializado hasta el retail hiperlocal, evidencian 
-                        una economía orientada al mercado interno robusto.
+                        Los alimentos representan el 37.7% del gasto total de los hogares mexicanos, 
+                        seguido por transporte (19.5%). Estados con menor ingreso destinan hasta 
+                        45% de su presupuesto a alimentación, indicando vulnerabilidad alimentaria.
                     </p>
                 </div>
 
-                <div class="insight-card servicios">
-                    <div class="insight-icon">⚙️</div>
-                    <h3 class="insight-title">Revolución de Servicios Profesionales</h3>
-                    <div class="insight-stat">1.2M</div>
+                <div class="insight-card regional">
+                    <div class="insight-icon">🎯</div>
+                    <h3 class="insight-title">Capacidad de Ahorro Diferenciada</h3>
+                    <div class="insight-stat">+/-</div>
                     <p class="insight-description">
-                        1.2 millones de establecimientos de servicios profesionales, técnicos y 
-                        especializados muestran la transición hacia una economía del conocimiento, 
-                        impulsada por digitalización y servicios de alto valor agregado.
-                    </p>
-                </div>
-
-                <div class="insight-card empleo">
-                    <div class="insight-icon">👥</div>
-                    <h3 class="insight-title">Generación de Empleo Formal</h3>
-                    <div class="insight-stat">27.1M</div>
-                    <p class="insight-description">
-                        27.1 millones de empleos formales con un crecimiento del 8.2% vs. 2019. 
-                        La digitalización y nuevas industrias (e-commerce, tecnología, energías renovables) 
-                        están transformando el mercado laboral mexicano.
+                        CDMX y Nuevo León registran ahorros promedio superiores a $40,000 anuales, 
+                        mientras que 18 entidades presentan déficit o ahorro mínimo, limitando 
+                        su capacidad de inversión en educación, salud y mejores condiciones de vida.
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="temporal-section">
-        <div class="container">
-            <h2 class="temporal-title">Serie Histórica Quinquenal</h2>
-            <p class="temporal-subtitle">Evolución estructural de la economía mexicana con datos comparables</p>
-            
-            <div class="temporal-grid">
-                <div class="temporal-card current">
-                    <div class="temporal-year current">2024</div>
-                    <div class="temporal-status current">DASHBOARD ACTIVO</div>
-                    <p class="temporal-description">Datos económicos 2023 completos con nuevas variables: discapacidad, tecnologías digitales, formalidad.</p>
-                </div>
-                <div class="temporal-card available">
-                    <div class="temporal-year available">2019</div>
-                    <div class="temporal-status available">DISPONIBLE</div>
-                    <p class="temporal-description">Línea base pre-pandemia para análisis comparativos de crecimiento y resiliencia económica.</p>
-                </div>
-                <div class="temporal-card available">
-                    <div class="temporal-year available">2014</div>
-                    <div class="temporal-status available">DISPONIBLE</div>
-                    <p class="temporal-description">Era pre-reforma energética, útil para estudios de evolución sectorial y competitividad.</p>
-                </div>
-                <div class="temporal-card available">
-                    <div class="temporal-year available">2009</div>
-                    <div class="temporal-status available">DISPONIBLE</div>
-                    <p class="temporal-description">Post-crisis financiera global, base para análisis de recuperación y transformación económica.</p>
-                </div>
-            </div>
-            
-            <p style="text-align: center; margin-top: 2rem; color: #64748b;">
-                <strong>Análisis longitudinal disponible:</strong> Estudios de evolución sectorial 2009-2024, 
-                impacto de políticas industriales, y proyecciones de competitividad.
-            </p>
         </div>
     </section>
 
     <section class="granularidad-section">
         <div class="container">
-            <h2 class="granularidad-title">Granularidad Territorial y Sectorial</h2>
-            <p class="granularidad-subtitle">Análisis desde clusters nacionales hasta establecimientos individuales por localidad</p>
+            <h2 class="granularidad-title">Granularidad y Representatividad</h2>
+            <p class="granularidad-subtitle">Análisis estadísticamente representativo a nivel estatal con proyecciones locales</p>
             
             <div class="granularidad-flow">
                 <div class="granularidad-level">Nacional</div>
                 <div class="granularidad-arrow">→</div>
                 <div class="granularidad-level">Estatal</div>
                 <div class="granularidad-arrow">→</div>
-                <div class="granularidad-level">Municipal</div>
+                <div class="granularidad-level">Urbano/Rural</div>
                 <div class="granularidad-arrow">→</div>
-                <div class="granularidad-level">Localidad</div>
-                <div class="granularidad-arrow">→</div>
-                <div class="granularidad-level">Establecimiento</div>
+                <div class="granularidad-level">Proyección Local*</div>
             </div>
             
             <div class="granularidad-details">
                 <div class="detail-card">
                     <div class="detail-icon">📅</div>
                     <div class="detail-title">Periodicidad</div>
-                    <div class="detail-value">Quinquenal</div>
+                    <div class="detail-value">Bienal</div>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">🏢</div>
-                    <div class="detail-title">Cobertura</div>
-                    <div class="detail-value">99.8% Economía</div>
+                    <div class="detail-icon">🏠</div>
+                    <div class="detail-title">Muestra</div>
+                    <div class="detail-value">119,497 Hogares</div>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">📊</div>
+                    <div class="detail-icon">💡</div>
                     <div class="detail-title">Variables</div>
-                    <div class="detail-value">185+ Campos</div>
+                    <div class="detail-value">200+ Campos</div>
                 </div>
                 <div class="detail-card">
-                    <div class="detail-icon">🏭</div>
-                    <div class="detail-title">Clasificación</div>
-                    <div class="detail-value">SCIAN 2023</div>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🔗</div>
+                    <div class="detail-icon">🎯</div>
                     <div class="detail-title">Integración</div>
-                    <div class="detail-value">CVEGEO</div>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-icon">🆕</div>
-                    <div class="detail-title">Novedad 2024</div>
-                    <div class="detail-value">Formal/Informal</div>
+                    <div class="detail-value">Metodología LIM</div>
                 </div>
             </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: #64748b; font-size: 0.9rem;">
+                *Proyección a nivel AGEB/Manzana mediante estimación para áreas pequeñas (small-area estimation) 
+                integrando variables del CPV 2020 como predictores.
+            </p>
+        </div>
+    </section>
+
+    <section class="temporal-section">
+        <div class="container">
+            <h2 class="temporal-title">Serie Histórica Disponible</h2>
+            <p class="temporal-subtitle">Análisis longitudinal de la evolución socioeconómica de México</p>
+            
+            <div class="temporal-grid">
+                <div class="temporal-card current">
+                    <div class="temporal-year current">2024</div>
+                    <div class="temporal-status current">DASHBOARD ACTIVO</div>
+                    <p class="temporal-description">Análisis completo con radiografía socioeconómica post-pandemia y nuevas variables de bienestar digital.</p>
+                </div>
+                <div class="temporal-card available">
+                    <div class="temporal-year available">2022</div>
+                    <div class="temporal-status available">DISPONIBLE</div>
+                    <p class="temporal-description">Datos de recuperación económica post-COVID con análisis de resiliencia de hogares.</p>
+                </div>
+                <div class="temporal-card available">
+                    <div class="temporal-year available">2020</div>
+                    <div class="temporal-status available">DISPONIBLE</div>
+                    <p class="temporal-description">Impacto inicial de la pandemia en patrones de consumo y estructura de ingresos.</p>
+                </div>
+                <div class="temporal-card available">
+                    <div class="temporal-year available">2018</div>
+                    <div class="temporal-status available">DISPONIBLE</div>
+                    <p class="temporal-description">Línea base pre-pandemia para análisis comparativos y estudios de tendencias.</p>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: #64748b;">
+                <strong>Estudios comparativos disponibles:</strong> Análisis de evolución temporal 2018-2024, 
+                impacto de políticas públicas, y proyecciones de tendencias socioeconómicas.
+            </p>
         </div>
     </section>
 
     <section class="casos-section">
         <div class="container">
-            <h2 class="casos-title">Estudios Estratégicos con Censos Económicos</h2>
-            <p class="casos-subtitle">Casos de uso específicos para maximizar el valor de la inteligencia estructural económica</p>
+            <h2 class="casos-title">Estudios Estratégicos con ENIGH</h2>
+            <p class="casos-subtitle">Casos de uso específicos para maximizar el valor de la inteligencia socioeconómica</p>
             
             <div class="casos-tabs">
                 <div class="caso-tab active">Sector Privado</div>
                 <div class="caso-tab">Sector Público</div>
-                <div class="caso-tab">Nearshoring</div>
+                <div class="caso-tab">Investigación</div>
             </div>
             
             <div class="casos-content" id="casos-content">
@@ -873,15 +866,15 @@
 
     <section class="cta-section" id="contacto">
         <div class="container">
-            <h2 class="cta-title">Analiza la Estructura Económica de tu Sector</h2>
+            <h2 class="cta-title">Descubre el Potencial Socioeconómico de tu Mercado</h2>
             <p class="cta-subtitle">
-                Consultoría especializada en análisis sectorial y competitividad con datos oficiales 
-                del Censo Económico 2024 y metodología de clusters industriales
+                Análisis personalizado del comportamiento de consumo e ingresos con datos oficiales ENIGH 
+                y metodología de estimación para áreas pequeñas
             </p>
             
             <div class="cta-buttons">
                 <a href="mailto:juanheriberto.rosas@lokusdata.com" class="btn-cta">
-                    Consultoría Sectorial
+                    Consultoría Personalizada
                 </a>
                 <a href="https://api.whatsapp.com/send/?phone=525510806597&text&type=phone_number&app_absent=0" 
                    target="_blank" class="btn-cta-secondary">
@@ -902,117 +895,117 @@
                 'Sector Privado': [
                     {
                         number: 1,
-                        title: 'Análisis de Competitividad Sectorial',
-                        description: 'Benchmarking detallado de productividad, márgenes, crecimiento y posicionamiento competitivo vs. competidores directos. Identificación de líderes sectoriales y mejores prácticas.',
-                        bases: '✅ CE únicamente (variables de productividad, ingresos, gastos, personal ocupado por sector)'
+                        title: 'Segmentación de Mercado por Poder Adquisitivo',
+                        description: 'Identificación de mercados objetivo mediante análisis de ingresos familiares por región. Mapeo de segmentos Premium, Medio y Popular para estrategias de pricing y posicionamiento diferenciado.',
+                        bases: '✅ ENIGH únicamente (análisis de distribución de ingresos por deciles)'
                     },
                     {
                         number: 2,
-                        title: 'Mapeo de Cadenas de Valor',
-                        description: 'Identificación completa de proveedores, clientes y socios estratégicos por región. Análisis de integración vertical y horizontal, oportunidades de fusiones y alianzas.',
-                        bases: '🔗 CE + DENUE (estructura sectorial + ubicación geográfica de empresas complementarias)'
+                        title: 'Análisis de Demanda Potencial por Categoría',
+                        description: 'Estimación del gasto promedio en categorías específicas (alimentación, vivienda, transporte, educación) para dimensionar mercados y planificar inventarios.',
+                        bases: '✅ ENIGH únicamente (desagregación de gasto por categorías y subcategorías)'
                     },
                     {
                         number: 3,
-                        title: 'Estrategias de Expansión Geográfica',
-                        description: 'Identificación de mercados regionales con mayor dinamismo económico, menor competencia y condiciones favorables para entrada o expansión de operaciones.',
-                        bases: '✅ CE únicamente (concentración sectorial, crecimiento regional, análisis de mercados)'
+                        title: 'Expansión Geográfica Basada en Capacidad de Gasto',
+                        description: 'Priorización de estados y regiones para expansión comercial considerando ingreso disponible, propensión al consumo y patrones de gasto específicos del sector.',
+                        bases: '🔗 ENIGH + DENUE (mercado potencial vs. competencia existente) + Marco Geoestadístico'
                     },
                     {
                         number: 4,
-                        title: 'Evaluación de Mercados para Fusiones/Adquisiciones',
-                        description: 'Análisis de estructura de mercado, concentración sectorial, identificación de targets potenciales y valoración de oportunidades de consolidación industrial.',
-                        bases: '✅ CE únicamente (número de empresas, tamaño, ingresos, participación de mercado)'
+                        title: 'Estrategias de Crédito y Financiamiento',
+                        description: 'Perfilado de riesgo crediticio basado en ingresos familiares estables, capacidad de ahorro y estructura de gastos para productos financieros personalizados.',
+                        bases: '✅ ENIGH únicamente (análisis de ingresos, gastos, ahorro y estabilidad financiera)'
                     },
                     {
                         number: 5,
-                        title: 'Análisis de Productividad y Eficiencia',
-                        description: 'Estudios comparativos de productividad laboral, eficiencia operativa y rentabilidad vs. promedios sectoriales para identificar oportunidades de mejora.',
-                        bases: '✅ CE únicamente (personal ocupado, ingresos, gastos, valor agregado, activos)'
+                        title: 'Análisis de Estacionalidad y Ciclos de Consumo',
+                        description: 'Identificación de patrones temporales de gasto familiar para optimizar campañas de marketing, promociones y gestión de inventarios.',
+                        bases: '🔗 ENIGH + series históricas 2018-2024 (análisis de tendencias temporales)'
                     },
                     {
                         number: 6,
-                        title: 'Inteligencia de Mercado B2B',
-                        description: 'Dimensionamiento de mercados objetivo, identificación de clientes potenciales por tamaño y capacidad de compra, estrategias de segmentación empresarial.',
-                        bases: '✅ CE únicamente (estructura empresarial por tamaño, gastos por categoría, cadenas de valor)'
+                        title: 'Desarrollo de Productos para Segmentos Emergentes',
+                        description: 'Identificación de brechas de consumo y oportunidades de mercado mediante análisis de gastos no cubiertos o insuficientemente atendidos por sector.',
+                        bases: '✅ ENIGH únicamente (análisis de gaps en patrones de gasto por categorías)'
                     }
                 ],
                 
                 'Sector Público': [
                     {
                         number: 1,
-                        title: 'Diseño de Política Industrial',
-                        description: 'Identificación de sectores estratégicos, clusters industriales emergentes y vocaciones productivas regionales para diseño de incentivos y programas de desarrollo.',
-                        bases: '✅ CE únicamente (especialización productiva, competitividad sectorial, mapeo industrial)'
+                        title: 'Focalización de Programas Sociales',
+                        description: 'Identificación precisa de poblaciones vulnerables mediante análisis de ingresos, estructura familiar y patrones de gasto esencial para programas de transferencias.',
+                        bases: '🔗 ENIGH + CPV 2020 (cruce de perfiles socioeconómicos con ubicación geográfica)'
                     },
                     {
                         number: 2,
-                        title: 'Programas de Formalización Empresarial',
-                        description: 'Mapeo de sectores y regiones con alta informalidad. Diseño de estrategias diferenciadas de formalización según características sectoriales y territoriales.',
-                        bases: '✅ CE únicamente (nueva variable formal/informal 2024 + características sectoriales)'
+                        title: 'Diseño de Políticas de Desarrollo Regional',
+                        description: 'Diagnóstico de disparidades regionales en ingreso y calidad de vida para diseñar estrategias diferenciadas de desarrollo económico local.',
+                        bases: '✅ ENIGH únicamente (análisis comparativo estatal de indicadores socioeconómicos)'
                     },
                     {
                         number: 3,
-                        title: 'Planificación de Parques Industriales',
-                        description: 'Identificación de ubicaciones óptimas para desarrollo de infraestructura industrial basada en concentración sectorial, cadenas de valor y ventajas territoriales.',
-                        bases: '🔗 CE + Marco Geoestadístico (clusters industriales + infraestructura + conectividad)'
+                        title: 'Evaluación de Impacto de Políticas Públicas',
+                        description: 'Medición del efecto de programas gubernamentales comparando evolución de ingresos y gastos familiares entre regiones beneficiarias y no beneficiarias.',
+                        bases: '🔗 ENIGH series 2018-2024 (análisis longitudinal de impacto) + ubicación de programas'
                     },
                     {
                         number: 4,
-                        title: 'Evaluación de Impacto de Políticas',
-                        description: 'Medición del efecto de programas de apoyo empresarial, incentivos fiscales y políticas sectoriales comparando evolución 2019 vs 2024.',
-                        bases: '🔗 CE 2019 + CE 2024 (análisis comparativo de crecimiento sectorial y territorial)'
+                        title: 'Planificación de Infraestructura Social',
+                        description: 'Dimensionamiento de necesidades de infraestructura educativa, de salud y vivienda basado en capacidad de gasto familiar y prioridades de inversión.',
+                        bases: '🔗 ENIGH + CPV 2020 (demanda potencial) + DENUE (oferta existente de servicios)'
                     },
                     {
                         number: 5,
-                        title: 'Estrategias de Atracción de Inversión',
-                        description: 'Perfilado de ventajas competitivas territoriales y sectoriales para marketing de destinos de inversión. Identificación de sectores objetivo para promoción.',
-                        bases: '✅ CE únicamente (fortalezas sectoriales, productividad, crecimiento, ecosistemas)'
+                        title: 'Política Fiscal y Tributaria',
+                        description: 'Análisis de capacidad contributiva por segmentos de ingreso para diseño de esquemas fiscales progresivos y estimación de recaudación potencial.',
+                        bases: '✅ ENIGH únicamente (análisis de distribución de ingresos y capacidad de pago)'
                     },
                     {
                         number: 6,
-                        title: 'Desarrollo de Proveedores Locales',
-                        description: 'Identificación de brechas en cadenas de suministro locales y oportunidades para desarrollo de proveedores PYME que atiendan grandes empresas.',
-                        bases: '✅ CE únicamente (análisis de cadenas de valor, compras empresariales, gaps de proveeduría)'
+                        title: 'Seguridad Alimentaria y Nutricional',
+                        description: 'Evaluación del acceso económico a alimentos nutritivos mediante análisis del gasto alimentario y su composición nutricional por región.',
+                        bases: '✅ ENIGH únicamente (desagregación detallada de gasto en alimentos por categorías nutricionales)'
                     }
                 ],
                 
-                'Nearshoring': [
+                'Investigación': [
                     {
                         number: 1,
-                        title: 'Mapeo de Ecosistemas Industriales',
-                        description: 'Identificación de clusters industriales consolidados y emergentes por sector. Análisis de densidad de proveedores, servicios de apoyo y infraestructura especializada.',
-                        bases: '✅ CE únicamente (concentración sectorial, análisis de clusters, cadenas productivas)'
+                        title: 'Análisis de Desigualdad y Movilidad Social',
+                        description: 'Estudios académicos sobre distribución del ingreso, índices de Gini, movilidad intergeneracional y factores determinantes de la desigualdad socioeconómica.',
+                        bases: '🔗 ENIGH series temporales 2018-2024 + CPV 2020 (análisis longitudinal de movilidad)'
                     },
                     {
                         number: 2,
-                        title: 'Análisis de Capacidad Productiva',
-                        description: 'Evaluación de la capacidad instalada, utilización de activos y potencial de escalamiento de sectores clave para empresas relocalizando desde Asia.',
-                        bases: '✅ CE únicamente (activos fijos, capacidad productiva, utilización, crecimiento sectorial)'
+                        title: 'Economía del Comportamiento del Consumidor',
+                        description: 'Investigación sobre patrones de consumo, elasticidades precio-ingreso, preferencias reveladas y modelos de toma de decisiones familiares.',
+                        bases: '✅ ENIGH únicamente (análisis econométrico de funciones de demanda)'
                     },
                     {
                         number: 3,
-                        title: 'Benchmarking de Productividad vs. Asia',
-                        description: 'Comparación de productividad laboral, costos de producción y eficiencia manufacturera mexicana vs. principales destinos asiáticos de producción.',
-                        bases: '✅ CE únicamente (productividad laboral, costos unitarios, eficiencia operativa)'
+                        title: 'Impacto Económico de Crisis y Choques Externos',
+                        description: 'Evaluación de la resiliencia económica de los hogares ante crisis (COVID-19, inflación) mediante análisis de adaptación de patrones de consumo.',
+                        bases: '🔗 ENIGH 2018, 2020, 2022, 2024 (análisis pre, durante y post crisis)'
                     },
                     {
                         number: 4,
-                        title: 'Evaluación de Proveedores Tier 1/2/3',
-                        description: 'Mapeo completo de cadenas de suministro disponibles por sector. Identificación de proveedores de primer, segundo y tercer nivel para empresas manufactureras.',
-                        bases: '🔗 CE + DENUE (cadenas de valor detalladas + ubicación geográfica de proveedores)'
+                        title: 'Estudios de Bienestar y Calidad de Vida',
+                        description: 'Construcción de índices multidimensionales de bienestar incorporando ingresos, gastos, acceso a servicios y condiciones habitacionales.',
+                        bases: '🔗 ENIGH + CPV 2020 (indicadores de calidad de vida) + acceso a servicios básicos'
                     },
                     {
                         number: 5,
-                        title: 'Análisis de Costos de Establecimiento',
-                        description: 'Evaluación de costos de entrada a diferentes mercados regionales: mano de obra, energía, terrenos, logística, servicios profesionales.',
-                        bases: '✅ CE únicamente (costos laborales, gastos operativos, análisis de competitividad de costos)'
+                        title: 'Análisis de Género y Economía del Cuidado',
+                        description: 'Investigación sobre jefatura femenina de hogar, brechas salariales y asignación de recursos dentro del hogar por género.',
+                        bases: '✅ ENIGH únicamente (análisis por género del jefe de hogar y estructura de gastos)'
                     },
                     {
                         number: 6,
-                        title: 'Identificación de Sectores Prioritarios',
-                        description: 'Análisis de sectores con mayor potencial de crecimiento por nearshoring: automotriz, aeroespacial, electrónicos, textil, dispositivos médicos.',
-                        bases: '🔗 CE series temporales 2014-2024 (tendencias de crecimiento sectorial y competitividad)'
+                        title: 'Proyecciones Demográficas y Económicas',
+                        description: 'Modelos predictivos de evolución socioeconómica basados en tendencias históricas de ingresos, estructura familiar y patrones de consumo.',
+                        bases: '🔗 ENIGH series completas + CPV 2020 (proyecciones demográficas) + modelos econométricos'
                     }
                 ]
             };
