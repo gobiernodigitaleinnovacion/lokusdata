@@ -951,9 +951,9 @@
         // Newsletter form handling
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             setTimeout(() => {
-                alert('¡Gracias! Te has suscrito exitosamente a LIM Intelligence Weekly 📊');
-            }, 500);
-        });
+               alert('¡Gracias! Te has suscrito exitosamente a LIM Intelligence Weekly 📊');
+               window.location.href = '/noticias/'; // Regresa al blog
+            }, 1000);
 
         // Smooth scroll para anclas
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
