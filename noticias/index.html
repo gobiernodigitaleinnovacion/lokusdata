@@ -897,7 +897,7 @@
                 Datos reales, metodología comprobada, resultados medibles.
             </p>
             
-            <form class="newsletter-form" name="newsletter" method="POST" netlify>
+            <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" action="/noticias/?submitted=true">
                 <input type="email" name="email" class="newsletter-input" placeholder="tu@email.com" required>
                 <button type="submit" class="newsletter-button">Suscribirse Gratis</button>
             </form>
@@ -949,12 +949,16 @@
 
     <script>
         // Newsletter form handling
-         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-           setTimeout(() => {
-              alert('¡Gracias! Te has suscrito exitosamente a LIM Intelligence Weekly 📊');
-              window.location.href = '/noticias/index.html'; // ← URL completa
-          }, 1000);
-            });
+        // Verificar si se completó el formulario
+         if (window.location.search.includes('submitted=true')) {
+          alert('¡Gracias! Te has suscrito exitosamente a LIM Intelligence Weekly 📊');
+          // Limpiar la URL después de mostrar el mensaje
+             setTimeout(() => {
+             window.history.replaceState({}, document.title, '/noticias/');
+             }, 1000);
+           }
+
+// Ya no necesitamos preventDefault porque dejamos que Netlify maneje el form naturalmente
 
         // Smooth scroll para anclas
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
