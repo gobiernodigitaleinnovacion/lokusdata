@@ -221,6 +221,9 @@
             transition: all 0.3s;
             border: 2px solid transparent;
             text-decoration: none;
+            font-size: 0.95rem;
+            text-align: center;
+            min-width: 180px;
         }
 
         .dashboard-tab.active {
@@ -591,6 +594,8 @@
         @media (max-width: 768px) {
             .hero-section h1 { font-size: 2.5rem; }
             .dashboard-container { height: 600px; }
+            .dashboard-tabs { flex-direction: column; align-items: center; }
+            .dashboard-tab { min-width: auto; width: 100%; max-width: 300px; }
             .granularidad-flow { flex-direction: column; }
             .granularidad-arrow { transform: rotate(90deg); }
             .casos-tabs { flex-direction: column; align-items: center; }
@@ -655,11 +660,12 @@
     <section class="dashboard-section" id="dashboard">
         <div class="container">
             <h2 class="dashboard-title">Sistema de Inteligencia Demográfica CPV 2020</h2>
-            <p class="dashboard-subtitle">Análisis territorial completo desde nivel nacional hasta manzana urbana individual</p>
+            <p class="dashboard-subtitle">Análisis territorial completo desde nivel nacional hasta manzana urbana individual con proyecciones demográficas 2020-2040</p>
             
             <div class="dashboard-tabs">
                 <a href="#" class="dashboard-tab active" data-level="localidad">🏙️ Análisis por Localidad</a>
                 <a href="#" class="dashboard-tab" data-level="ageb">🎯 Análisis Granular AGEB</a>
+                <a href="#" class="dashboard-tab" data-level="proyecciones">📈 Proyecciones CONAPO 2020-2040</a>
             </div>
             
             <div class="dashboard-container">
@@ -736,7 +742,7 @@
     <section class="granularidad-section">
         <div class="container">
             <h2 class="granularidad-title">Granularidad Territorial sin Precedentes</h2>
-            <p class="granularidad-subtitle">Del panorama nacional hasta el análisis hiperlocal de manzana urbana</p>
+            <p class="granularidad-subtitle">Del panorama nacional hasta el análisis hiperlocal de manzana urbana con proyecciones municipales a 20 años</p>
             
             <div class="granularidad-flow">
                 <div class="granularidad-level">Nacional</div>
@@ -780,8 +786,8 @@
                 </div>
                 <div class="detail-card">
                     <div class="detail-icon">🤖</div>
-                    <div class="detail-title">IA Predictiva</div>
-                    <div class="detail-value">Proyección 2030</div>
+                    <div class="detail-title">Proyecciones CONAPO</div>
+                    <div class="detail-value">2020-2040</div>
                 </div>
             </div>
         </div>
@@ -790,7 +796,7 @@
     <section class="casos-section">
         <div class="container">
             <h2 class="casos-title">Estudios Estratégicos con CPV 2020</h2>
-            <p class="casos-subtitle">Casos de uso específicos para maximizar el valor de la inteligencia demográfica</p>
+            <p class="casos-subtitle">Casos de uso específicos para maximizar el valor de la inteligencia demográfica con datos actuales y proyecciones futuras</p>
             
             <div class="casos-tabs">
                 <div class="caso-tab active">Sector Privado</div>
@@ -809,7 +815,7 @@
             <h2 class="cta-title">Descubre el Potencial Demográfico de tu Territorio</h2>
             <p class="cta-subtitle">
                 Análisis personalizado del tejido sociodemográfico con datos oficiales CPV 2020 
-                y metodología de inteligencia territorial avanzada hasta nivel manzana
+                y proyecciones CONAPO 2020-2040 con metodología de inteligencia territorial avanzada
             </p>
             
             <div class="cta-buttons">
@@ -834,7 +840,8 @@
             // URLs de los dashboards
             const dashboardUrls = {
                 'localidad': 'https://app.fabric.microsoft.com/view?r=eyJrIjoiYjVlN2NlYWQtNzZmMS00ZjEyLWE3YjktMjk5OWU4MTkyZDQ1IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9',
-                'ageb': 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZWQzNjAwNDktZGQ4OS00ZGE0LWI3NGMtZGMzMmY3ZWE4MjE2IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9'
+                'ageb': 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZWQzNjAwNDktZGQ4OS00ZGE0LWI3NGMtZGMzMmY3ZWE4MjE2IiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9',
+                'proyecciones': 'https://app.fabric.microsoft.com/view?r=eyJrIjoiOWFlOTI2ZDItMTM1YS00MjU5LTg0NzAtMGI5YmNkMDliNmJiIiwidCI6ImIwODMwZjgyLWM0OGQtNGU5ZC1iYTc0LTVlMjVmYmYzZmIzYiIsImMiOjR9'
             };
             
             dashboardTabs.forEach(tab => {
@@ -888,9 +895,9 @@
                     },
                     {
                         number: 5,
-                        title: 'Análisis de Potencial Habitacional',
-                        description: 'Evaluación de demanda potencial de vivienda nueva mediante análisis de crecimiento poblacional, formación de hogares y déficit habitacional por zona.',
-                        bases: '✅ CPV únicamente (hogares, vivienda, crecimiento demográfico)'
+                        title: 'Análisis de Potencial Habitacional con Proyecciones',
+                        description: 'Evaluación de demanda potencial de vivienda nueva mediante análisis de crecimiento poblacional actual y proyecciones CONAPO 2020-2040. Identificación de territorios con mayor potencial de crecimiento demográfico.',
+                        bases: '🔗 CPV + Proyecciones CONAPO (hogares, vivienda, crecimiento demográfico proyectado)'
                     },
                     {
                         number: 6,
@@ -903,9 +910,9 @@
                 'Sector Público': [
                     {
                         number: 1,
-                        title: 'Planificación de Infraestructura Educativa',
-                        description: 'Dimensionamiento y ubicación óptima de escuelas basado en población en edad escolar actual y proyectada. Análisis de cobertura educativa y brechas territoriales.',
-                        bases: '✅ CPV únicamente (población 3-17 años + análisis de cobertura escolar)'
+                        title: 'Planificación de Infraestructura Educativa a Largo Plazo',
+                        description: 'Dimensionamiento y ubicación óptima de escuelas basado en población en edad escolar actual y proyecciones demográficas 2020-2040. Anticipación de demanda educativa futura por territorio.',
+                        bases: '🔗 CPV + Proyecciones CONAPO (población 3-17 años actual y proyectada)'
                     },
                     {
                         number: 2,
@@ -915,9 +922,9 @@
                     },
                     {
                         number: 3,
-                        title: 'Política de Vivienda Social',
-                        description: 'Mapeo de déficit habitacional y hacinamiento para priorizar programas de vivienda social. Identificación de zonas con mayor necesidad de mejoramiento habitacional.',
-                        bases: '✅ CPV únicamente (condiciones de vivienda + densidad habitacional)'
+                        title: 'Política de Vivienda Social con Visión 2040',
+                        description: 'Mapeo de déficit habitacional actual y proyección de demanda futura para priorizar programas de vivienda social. Planificación territorial de desarrollo urbano sostenible.',
+                        bases: '🔗 CPV + Proyecciones CONAPO (condiciones actuales + crecimiento poblacional proyectado)'
                     },
                     {
                         number: 4,
@@ -942,9 +949,9 @@
                 'Análisis Territorial': [
                     {
                         number: 1,
-                        title: 'Identificación de Polos de Desarrollo',
-                        description: 'Análisis de concentración demográfica y económica para identificar centros urbanos emergentes y polos de atracción poblacional con potencial de crecimiento.',
-                        bases: '✅ CPV únicamente (densidad poblacional + características urbanas)'
+                        title: 'Identificación de Polos de Desarrollo Emergentes',
+                        description: 'Análisis de concentración demográfica actual y proyecciones de crecimiento 2020-2040 para identificar centros urbanos emergentes y polos de atracción poblacional futura.',
+                        bases: '🔗 CPV + Proyecciones CONAPO (densidad actual + crecimiento proyectado)'
                     },
                     {
                         number: 2,
@@ -960,9 +967,9 @@
                     },
                     {
                         number: 4,
-                        title: 'Tipologías Territoriales',
-                        description: 'Clasificación de territorios según características demográficas dominantes: urbano joven, urbano envejecido, rural tradicional, áreas de transición.',
-                        bases: '✅ CPV únicamente (análisis multivariado de características demográficas)'
+                        title: 'Tipologías Territoriales Evolutivas',
+                        description: 'Clasificación de territorios según características demográficas actuales y tendencias proyectadas: urbano joven en crecimiento, urbano envejecido, rural en transición, áreas de despoblamiento.',
+                        bases: '🔗 CPV + Proyecciones CONAPO (análisis multivariado actual + tendencias futuras)'
                     },
                     {
                         number: 5,
@@ -972,9 +979,9 @@
                     },
                     {
                         number: 6,
-                        title: 'Proyecciones Demográficas Locales',
-                        description: 'Modelado predictivo de crecimiento poblacional a nivel AGEB usando IA. Identificación de zonas de crecimiento acelerado, estancamiento o declive demográfico.',
-                        bases: '✅ CPV únicamente (tendencias demográficas + modelos predictivos con IA)'
+                        title: 'Proyecciones Demográficas Locales Integradas',
+                        description: 'Integración de datos CPV 2020 con proyecciones CONAPO municipales para modelado predictivo hiperlocal. Identificación de zonas de crecimiento acelerado, estancamiento o declive demográfico.',
+                        bases: '🔗 CPV + Proyecciones CONAPO (integración completa para análisis predictivo territorial)'
                     }
                 ]
             };
